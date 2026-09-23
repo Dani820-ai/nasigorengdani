@@ -49,7 +49,7 @@
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
   .brand { font-family: 'Anton', sans-serif; font-size: 22px; color: var(--cream); display: flex; align-items: center; gap: 8px; }
   .brand span { color: var(--chili); }
-  .navlinks { display: flex; gap: 28px; font-weight: 600; font-size: 14px; align-items: center; }
+  .navlinks { display: flex; gap: 24px; font-weight: 600; font-size: 14px; align-items: center; flex-wrap: wrap; }
   .navlinks a { opacity: 0.85; transition: opacity .2s; }
   .navlinks a:hover { opacity: 1; }
   .btn {
@@ -76,7 +76,7 @@
   .btn-ghost { border: 2px solid var(--cream); padding: 11px 22px; border-radius: 4px; font-weight: 700; font-size: 14px; background: transparent; color: var(--cream); cursor: pointer; }
   .btn-ghost:hover { background: var(--cream); color: var(--char); }
 
-  /* HERO IMAGE CONTAINER (Replaces CSS plate) */
+  /* HERO IMAGE CONTAINER */
   .hero-img-wrap {
     position: relative;
     width: 100%;
@@ -121,7 +121,7 @@
   .spice-readout .label { font-weight: 700; font-size: 16px; }
   .spice-readout .desc { opacity: 0.75; font-size: 14px; margin-top: 4px; }
 
-  /* MENU */
+  /* MENU & DRINKS */
   .menu-list { display: flex; flex-direction: column; border-top: 1px solid rgba(243,233,214,0.12); }
   .menu-item {
     display: flex; justify-content: space-between; align-items: center; gap: 20px;
@@ -138,6 +138,10 @@
     display: inline-block; font-size: 11px; font-weight: 700; background: var(--leaf);
     color: var(--cream); padding: 2px 8px; border-radius: 3px; margin-left: 8px; vertical-align: middle;
   }
+  .tag-drink { background: #3B6F7A; }
+
+  /* DRINKS SECTION ALT BG */
+  .drinks-section { background: var(--char-2); }
 
   /* CART MODAL */
   .cart-overlay {
@@ -189,6 +193,7 @@
     <div class="brand">DANI<span>NASGOR</span></div>
     <div class="navlinks">
       <a href="#menu">Menu</a>
+      <a href="#drinks">Minuman</a>
       <a href="#level">Level Pedas</a>
       <button onclick="toggleCart()" class="btn">Keranjang <span id="navCartCount">(0)</span></button>
     </div>
@@ -198,14 +203,13 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker">NASI GORENG RAKYAT - HARGA MAHASISWA</div>
-      <h1>NASGOR<br>DANI <span class="accent">GACOR</span><br>BANGET</h1>
-      <p class="sub">Nasi goreng pinggir jalan, dibikin serius. Delapan level pedas, wangi bawang bakar, harga tetap ramah kantong anak kos.</p>
+      <div class="kicker">NASI GORENG BINTANG 5 - HARGA MAHASISWA</div>
+      <h1>NASGOR<br>DANI <span class="accent">ENAK</span><br>BANGET</h1>
+      <p class="sub">Nasi goreng pinggir jalan, dibikin dengan sepenuh hati. Delapan level pedas, harga anak kos.</p>
       <div class="hero-cta">
         <a href="#menu" class="btn">Pesan Sekarang</a>
       </div>
     </div>
-    <!-- Diganti dengan tag <img> -->
     <div class="hero-img-wrap">
       <img src="https://dcostseafood.id/wp-content/uploads/2023/04/Nasi-Goreng-telor.jpg" alt="Nasi Goreng Telor Dani Nasgor">
     </div>
@@ -232,7 +236,7 @@
 <section id="menu">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">MENU</div>
+      <div class="kicker">MENU UTAMA</div>
       <h2>Enam nasi goreng, satu wajan panas</h2>
     </div>
     <div class="menu-list">
@@ -243,7 +247,7 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 18.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Iblis', 14000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Iblis', 18000)">+ Tambah</button>
         </div>
       </div>
       <div class="menu-item">
@@ -253,7 +257,7 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 23.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Angus', 15000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Angus', 23000)">+ Tambah</button>
         </div>
       </div>
       <div class="menu-item">
@@ -263,7 +267,7 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 18.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Ijo Setan', 15000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Ijo Setan', 18000)">+ Tambah</button>
         </div>
       </div>
       <div class="menu-item">
@@ -273,7 +277,7 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 21.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Geprek', 17000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Geprek', 21000)">+ Tambah</button>
         </div>
       </div>
       <div class="menu-item">
@@ -283,7 +287,7 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 20.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Laut', 18000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Laut', 20000)">+ Tambah</button>
         </div>
       </div>
       <div class="menu-item">
@@ -293,7 +297,79 @@
         </div>
         <div class="menu-price-action">
           <div class="price">Rp 15.000</div>
-          <button class="btn-add" onclick="addToCart('Nasgor Original', 12000)">+ Tambah</button>
+          <button class="btn-add" onclick="addToCart('Nasgor Original', 15000)">+ Tambah</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEKSI MINUMAN -->
+<section id="drinks" class="drinks-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">PEREDA PEDAS</div>
+      <h2>Penyelamat tenggorokan pasca-iblis</h2>
+    </div>
+    <div class="menu-list">
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Es Teh Manis / Tawar<span class="tag tag-drink">Wajib</span></h3>
+          <p>Klasik dingin penawar lidah terbakar.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 5.000</div>
+          <button class="btn-add" onclick="addToCart('Es Teh (Manis/Tawar)', 5000)">+ Tambah</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Es Matcha<span class="tag tag-drink">Favorit</span></h3>
+          <p>Creamy, pahit-manis adem buat pendingin kepala.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 12.000</div>
+          <button class="btn-add" onclick="addToCart('Es Matcha', 12000)">+ Tambah</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Es Jeruk Peras</h3>
+          <p>Jeruk segar asli, asam manis penyegar keringat.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 8.000</div>
+          <button class="btn-add" onclick="addToCart('Es Jeruk Peras', 8000)">+ Tambah</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Es Milo</h3>
+          <p>Coklat malt dingin kental penambah tenaga anak kos.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 10.000</div>
+          <button class="btn-add" onclick="addToCart('Es Milo', 10000)">+ Tambah</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Es Lemon Tea</h3>
+          <p>Teh segar dengan sentuhan asam lemon asli.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 9.000</div>
+          <button class="btn-add" onclick="addToCart('Es Lemon Tea', 9000)">+ Tambah</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Air Mineral Botol</h3>
+          <p>Paling aman buat menetralisir darurat.</p>
+        </div>
+        <div class="menu-price-action">
+          <div class="price">Rp 4.000</div>
+          <button class="btn-add" onclick="addToCart('Air Mineral Botol', 4000)">+ Tambah</button>
         </div>
       </div>
     </div>
@@ -318,7 +394,7 @@
     <div class="cart-form">
       <input type="text" id="buyerName" placeholder="Nama Kamu" required>
       <input type="text" id="buyerAddress" placeholder="Alamat Pengiriman (Kos/Rumah)" required>
-      <input type="text" id="buyerNotes" placeholder="Catatan (Opsional: misal tanpa daun bawang)">
+      <input type="text" id="buyerNotes" placeholder="Catatan (Opsional: misal tanpa daun bawang / es teh manis)">
       <button class="btn btn-checkout" onclick="checkoutWA()">Checkout via WhatsApp 💬</button>
     </div>
   </div>
@@ -333,14 +409,14 @@
 
 <script>
   const levels = [
-    {label:"Anget-anget kuku", desc:"Buat yang baru belajar pedas. Masih bisa ngobrol santai."},
+    {label:"Adek-Adek an", desc:"Buat yang baru belajar pedas."},
     {label:"Mulai Kerasa", desc:"Keringat dikit di jidat, tapi masih fokus makan."},
     {label:"Lumayan Nampol", desc:"Minum es teh jadi wajib di sebelah piring."},
-    {label:"Gaco Beneran", desc:"Level favorit orang yang ngaku kuat pedas."},
+    {label:"Gacor Beneran", desc:"Level favorit orang yang ngaku kuat pedas."},
     {label:"Mulai Serius", desc:"Ngomong jadi cadel, mata mulai berair dikit."},
     {label:"Berani Taruhan", desc:"Biasanya dipesan gara-gara diledek temen."},
     {label:"Nangis Diam-diam", desc:"Tisu di meja habis duluan sebelum nasinya."},
-    {label:"Iblis Sungguhan", desc:"Atas tanggung jawab sendiri. Kami cuma masak."},
+    {label:"Tamboy Kun", desc:"Meninggal tanggung jawab sendiri. Kami cuma masak."},
   ];
   let currentLevel = 1;
 
@@ -459,7 +535,7 @@
                     `Nama: ${name}\n` +
                     `Alamat: ${address}\n\n` +
                     `*Pesanan:*\n${orderList}\n` +
-                    `*Level Pedas:* Level ${currentLevel} (${levels[currentLevel-1].label})\n` +
+                    `*Level Pedas (Nasgor):* Level ${currentLevel} (${levels[currentLevel-1].label})\n` +
                     `*Catatan:* ${notes ? notes : '-'}\n\n` +
                     `*Total Harga: ${formatRupiah(totalPrice)}*\n\n` +
                     `Mohon diproses ya, terima kasih!`;
